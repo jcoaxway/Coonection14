@@ -2,7 +2,8 @@
 <widget id="com.joaky.presales" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Conn14Club</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Axway Connections 2014 es una ocasión excelente para encontrarse y compartir experiencias con otros clientes, 
+		con directivos de Axway y con nuestros consultores expertos.
     </description>
     <author email="support@phonegap.com" href="http://phonegap.com">
         PhoneGap Team
