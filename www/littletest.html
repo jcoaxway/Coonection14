@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery.getJSON demo</title>
+<style>
+img {
+height: 100px;
+float: left;
+}
+</style>
+<script src="js/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+<div id="images"></div>
+<script type="text/javascript">  
+    jQuery.getJSON("http://localhost:3000/listafacturas?callback=?",  
+function (data) {  
+    alert( "Title: " + data[0].id );  
+});  
+</script>
+</body>
+</html>

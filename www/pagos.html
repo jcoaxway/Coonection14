@@ -33,40 +33,63 @@
 	<script id="home-tpl" type="text/x-handlebars-template">
     <div class='header'><h1>Home</h1></div>
     <div class='search-bar'><input class='search-key' type="search"/></div>
-    <div class="scroll"><ul class='employee-list'></ul></div>
+    <!--div class="scroll"><ul class='employee-list'></ul></div -->
 	</script>
 	
-	<script id="employee-li-tpl" type="text/x-handlebars-template">
+	<!-- script id="employee-li-tpl" type="text/x-handlebars-template">
     {{#.}}
-    <li><a href="#facturas/{{this.id}}">{{this.emisor}} {{this.cantidad}}<br/></a></li>
+    <li><a href="#employees/{{this.id}}">{{this.firstName}} {{this.lastName}}<br/>{{this.title}}</a></li>
     {{/.}}
 	</script>
 	
 	<script id="employee-tpl" type="text/x-handlebars-template">
-    <div class='header'><a href='#' class="button header-button header-button-left">Atrás</a><h1>Detalles</h1></div>
+    <div class='header'><a href='#' class="button header-button header-button-left">Back</a><h1>Details</h1></div>
     <div class='details'>
-        <img class='employee-image' src='img/chart.png' />
-        <h1>{{this.emisor}}</h1>
-        <h2>{{this.concepto}}</h2>
+        <img class='employee-image' src='img/{{firstName}}_{{lastName}}.jpg' />
+        <h1>{{firstName}} {{lastName}}</h1>
+        <h2>{{title}}</h2>
         <span class="location"></span>
         <ul>
-            <li><a href="tel:{{officePhone}}">Base Imponible<br/>{{this.basei}}</a></li>
-            <li><a href="tel:{{cellPhone}}">IVA<br/>{{this.vat}}</a></li>
-            <li><a href="sms:{{cellPhone}}">Total Factura<br/>{{this.cantidad}}</a></li>
+            <li><a href="tel:{{officePhone}}">Call Office<br/>{{officePhone}}</a></li>
+            <li><a href="tel:{{cellPhone}}">Call Cell<br/>{{cellPhone}}</a></li>
+            <li><a href="sms:{{cellPhone}}">SMS<br/>{{cellPhone}}</a></li>
         </ul>
     </div>
+	</script -->
+	
+	<!--script id="invoice-li-tpl" type="text/x-handlebars-template">
+    {{#.}}
+    <li><a href="#invoices/{{this.id}}">{{this.emisor}} {{this.cantidad}}<br/></a></li>
+    {{/.}}
 	</script>
+	
+	<script id="invoice-tpl" type="text/x-handlebars-template">
+    <div class='header'><a href='#' class="button header-button header-button-left">Atrás</a><h1>Detalles Factura</h1></div>
+    <div class='details'>
+        <img class='employee-image' src='img/{{firstName}}_{{lastName}}.jpg' />
+        <h1>Emisor: {{emisor}}</h1>
+        <h2>Concepto:{{concepto}}</h2>
+        <span class="location"></span>
+        <ul>
+            <li><a href="tel:{{officePhone}}">Base Imponible<br/>{{basei}}</a></li>
+            <li><a href="tel:{{cellPhone}}">Impuestos<br/>{{vat}}</a></li>
+            <li><a href="sms:{{cellPhone}}">Total a Pagar<br/>{{cantidad}}</a></li>
+        </ul>
+    </div>
+	</script -->
 	
 	
 	<script type="text/javascript" src="phonegap.js"></script>
 	<script src="js/handlebars.js"></script>
 	<script src="js/iscroll.js"></script>
 	<script src="js/jquery-1.8.2.min.js"></script>
+	<!-- script src="js/storage/pagos-access.js"></script>
 	<script src="js/storage/pagos-store.js"></script>
-	<script src="js/ConnectionsView.js"></script>
+	<script src="js/ConnectionsView.js"></script -->
+	<script src="js/storage/pagos-store.js"></script>
 	<script src="js/FacturaView.js"></script>
-	<script src="js/connectionsMain.js"></script>
-	
+	<script src="js/ConnectionsView.js"></script>
+	<script src="js/pagos.js"></script>
 
     </body>
 </html>
