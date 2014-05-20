@@ -1,35 +1,61 @@
 var PagosStore = function(successCallback, errorCallback) {
 
-    this.findByName2 = function(searchKey, callback) {
-		//var myfacturas=null;
-
-		//var test=jQuery.getJSON("http://192.168.64.133:8280/misfacturas",  
-		//myfacturas=JSON.stringify(data) );
-		
+    this.findByName = function(searchKey, callback) {
 		$.ajax({
 		dataType: "json",
+		//url: "http://192.168.64.133:8080/connections/v1/listafacturas?KeyId=270e6564-8083-4487-b4b8-67d77de8b973",
 		url: "http://192.168.64.133:8280/misfacturas",
 		crossDomain: true,
 		success: function (data) {
 			myfacturas=data;//JSON.stringify(data);
 			//alert("MyFacturas "+myfacturas);
 			//return myfacturas;
+		},
+		error: function (data) {
+			alert("Error de conexión");
 		}
 		});	
+		//var t="MyFacturas "+myfacturas;
 //alert("exists");		
-//		alert(JSON.stringify(myfacturas));
+//alert("MyFacturas "+myfacturas);
+
         callLater(callback,myfacturas);
     }
 	
-	this.findByName = function(searchKey, callback) {
+	this.findByName1 = function(searchKey, callback) {
         var facturas = this.listaFacturas.filter(function(element) {
 		    var fullName = element.emisor;
             return fullName.toLowerCase().indexOf(searchKey.toLowerCase()) > -1;
         });
         callLater(callback, facturas);
     }
+	
+	this.findById = function(id, callback) {
+		$.ajax({
+		dataType: "json",
+		url: "http://192.168.64.133:8280/misfacturas",
+		crossDomain: true,
+		success: function (data) {
+			myfacturas=data;
+		}
+		});	
 
-    this.findById = function(id, callback) {
+
+		var facturas=myfacturas;
+		
+		var factura = null;
+        var l = facturas.length;
+
+        for (var i=0; i < l; i++) {
+			if (facturas[i].id === id) {
+			    factura = facturas[i];
+                break;
+            }
+        }
+        callLater(callback, factura);
+    }
+
+    this.findById2 = function(id, callback) {
         var facturas = this.listaFacturas;
         var factura = null;
         var l = facturas.length;

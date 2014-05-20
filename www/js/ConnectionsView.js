@@ -1,8 +1,7 @@
 var ConnectionsView = function(store) {
 
 	this.findByName = function() {
-	//alert("FindByName ConnectionsView");
-    store.findByName($('.search-key').val(), function(employees) {
+		store.findByName($('.search-key').val(), function(employees) {
 		
         $('.employee-list').html(ConnectionsView.liTemplate(employees));
         if (self.iscroll) {
