@@ -5,8 +5,8 @@
         Axway Connections 2014 es una ocasión excelente para encontrarse y compartir experiencias con otros clientes, 
 		con directivos de Axway y con nuestros consultores expertos.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="jcopetegarcia@axway.com" href="http://phonegap.com">
+        Joaquin Copete
     </author>
     <feature name="http://api.phonegap.com/1.0/device" />
     <preference name="permissions" value="none" />
