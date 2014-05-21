@@ -31,6 +31,9 @@ var PagosStore = function(successCallback, errorCallback) {
 		crossDomain: true,
 		success: function (data) {
 			myfacturas=data;
+		},
+		error: function (data) {
+			alert("Error de conexión");
 		}
 		});	
 
